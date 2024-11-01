@@ -23,10 +23,6 @@ function printNumbers(...nums) {
         like forEach(), map(), or a for...of loop to iterate over the numbers.
   */
 
- 
-
-
-
 let item1 = "Pizza";
 let item2 = "Tea";
 let item3 = "Coffee";
@@ -46,11 +42,16 @@ function sum(...params) { // converting passing elements into an array so loop c
         console.log(element);
         result+=element
     });
-    return result;
-    
+    return result; 
+}
+
+function average(...params){
+    // passing params as seprate values, cos sum function is converting items into array
+    return sum(...params) / params.length; 
 }
 
 document.getElementById('mySubmit').onclick = () =>{
     let numbers = document.getElementById('numberInput').value.split('').map(Number);
     document.getElementById('sumNumber').textContent = sum(...numbers) // passing as an individual elements
+    document.getElementById('aveNumber').textContent = average(...numbers) // passing as an individual elements
 }
